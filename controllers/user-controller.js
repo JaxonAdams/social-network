@@ -4,13 +4,17 @@ const userController = {
     // Get all users
     getUsers(req, res) {
         User.find({})
-        // .populate({
-
-        // })
+        .populate({
+            path: 'thoughts',
+            select: '-__v'
+        })
         .select('-__v')
         .sort({ _id: -1 })
         .then(dbUserData => res.json(dbUserData))
-        .catch(err => res.status(500).json(err));
+        .catch(err => {
+            res.status(500).json(err);
+            console.log(err);
+        });
     },
     // Get user by ID
     getUserById({ params }, res) {
