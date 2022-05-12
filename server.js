@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(require('./routes'));
+
 // Set up mongo connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social-network', {
     useNewUrlParser: true,
@@ -18,4 +20,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social-ne
 // Log mongo queries
 mongoose.set('debug', true);
 
-app.listen(() => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
