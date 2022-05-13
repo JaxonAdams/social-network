@@ -13,7 +13,7 @@
 ## Description
 This is a generic social media server using Express, MongoDB, and Mongoose. It handles the creation of users, thoughts, reactions, and a friends list. For a demonstration of the functionality, please refer to the following video:
 
- - [Demonstration](placeholder)
+ - [Demonstration](https://drive.google.com/file/d/1PBQOxpcKHUbSQwOo5xtFU8AcxI60tSYG/view)
     
 
 ## Installation
